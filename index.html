@@ -27,7 +27,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -130,6 +130,40 @@
 
         /* ── Decorative ──────────────────── */
         .hr-gold { height: 1px; background: linear-gradient(90deg, transparent, #C4A76C, transparent); border: none; }
+
+        /* ── Editorial Quote ─────────────────── */
+        .quote-section { background: #FAFAF7; }
+        .quote-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 7rem;
+            line-height: 0.6;
+            color: #C4A76C;
+            opacity: 0.45;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-style: normal;
+            font-weight: 400;
+            user-select: none;
+            letter-spacing: -0.02em;
+        }
+        .quote-editorial {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            line-height: 1.55;
+            letter-spacing: 0.005em;
+            color: #222220;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .quote-rule {
+            width: 40px;
+            height: 1px;
+            background: #C4A76C;
+            margin: 2rem auto 0;
+            opacity: 0.7;
+        }
         @keyframes pulse-ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2.5); opacity: 0; } }
         .map-dot::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: rgba(45,122,79,0.3); animation: pulse-ring 2s ease-out infinite; }
 
@@ -258,13 +292,13 @@
 <!-- ═══════════════════════════════════════════════════════════════
      INTRO QUOTE
      ═══════════════════════════════════════════════════════════════ -->
-<section class="py-20 md:py-28 bg-cream">
-    <div class="max-w-5xl mx-auto px-6 md:px-12 text-center reveal">
-        <i data-lucide="quote" class="w-8 h-8 text-sand/40 mx-auto mb-6"></i>
-        <blockquote class="quote-text text-ink text-2xl md:text-3xl lg:text-4xl font-light tracking-tight" style="line-height:1.4;max-width:860px;margin:0 auto;">
+<section class="quote-section py-24 md:py-36">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center reveal">
+        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote class="quote-editorial">
             A 5 minutos do mar e do Rio Cávado, esta moradia oferece o raro privilégio de viver entre a brisa do oceano, a serenidade do rio e a calma da natureza.
         </blockquote>
-        <div class="hr-gold w-16 mx-auto mt-10"></div>
+        <div class="quote-rule"></div>
     </div>
 </section>
 
