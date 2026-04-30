@@ -407,10 +407,10 @@
             </p>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 reveal reveal-delay-1">
-            <button onclick="showToast(CFG.brochureMessage)" class="cta-glow inline-flex items-center justify-center gap-2.5 text-white text-[11px] font-semibold uppercase tracking-[0.15em] px-8 py-4 rounded-sm">
+            <a href="/LN-Exclusivo_-_Moradia_Luxo_T4.pdf" download class="cta-glow inline-flex items-center justify-center gap-2.5 text-white text-[11px] font-semibold uppercase tracking-[0.15em] px-8 py-4 rounded-sm">
                 <i data-lucide="download" class="w-4 h-4"></i>
-                Descarregar Brochure
-            </button>
+                Download de Brochura
+            </a>
             <a id="cta-phone" href="" class="cta-sand inline-flex items-center justify-center gap-2.5 bg-sand text-ink text-[11px] font-semibold uppercase tracking-[0.15em] px-8 py-4 rounded-sm hover:bg-sand-light transition-colors">
                 <i data-lucide="phone" class="w-4 h-4"></i>
             </a>
@@ -478,7 +478,7 @@ const CFG = {
 
     // ── Brochure ─────────────────────────────────────────────
     //    Set a URL to link directly to a PDF. Set to '' for toast message only.
-    brochureUrl: '',
+    brochureUrl: '/LN-Exclusivo_-_Moradia_Luxo_T4.pdf',
 
     // ── Brochure toast message (shown when brochureUrl is empty) ─
     brochureMessage: 'O brochure será enviado para o seu email em breve. Contacte-nos diretamente para o receber.',
