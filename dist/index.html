@@ -766,7 +766,104 @@ function showToast(message) {
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 4000);
 }
+
+// Background audio
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.createElement('audio');
+    audio.src = '/background.mp3';
+    audio.loop = true;
+    audio.volume = 0.35;
+
+    const btn = document.getElementById('audio-toggle');
+    const iconOn  = btn.querySelector('.icon-on');
+    const iconOff = btn.querySelector('.icon-off');
+    let playing = false;
+    let userMuted = false;
+
+    function setPlaying(val) {
+        playing = val;
+        iconOn.style.display  = playing ? 'block' : 'none';
+        iconOff.style.display = playing ? 'none'  : 'block';
+        btn.setAttribute('aria-label', playing ? 'Silenciar música' : 'Reproduzir música');
+    }
+
+    function startAudio() {
+        audio.play().then(function() { setPlaying(true); }).catch(function() {});
+    }
+
+    // Try autoplay immediately
+    startAudio();
+
+    // If blocked, start on first user interaction
+    function onFirstInteraction() {
+        if (!playing && !userMuted) {
+            startAudio();
+        }
+        document.removeEventListener('click', onFirstInteraction);
+        document.removeEventListener('scroll', onFirstInteraction);
+        document.removeEventListener('keydown', onFirstInteraction);
+        document.removeEventListener('touchstart', onFirstInteraction);
+    }
+    document.addEventListener('click', onFirstInteraction);
+    document.addEventListener('scroll', onFirstInteraction);
+    document.addEventListener('keydown', onFirstInteraction);
+    document.addEventListener('touchstart', onFirstInteraction);
+
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (playing) {
+            audio.pause();
+            setPlaying(false);
+            userMuted = true;
+        } else {
+            audio.play().then(function() { setPlaying(true); }).catch(function() {});
+            userMuted = false;
+        }
+    });
+
+    setPlaying(false);
+});
 </script>
+
+<!-- Audio toggle button -->
+<button
+    id="audio-toggle"
+    aria-label="Reproduzir música"
+    style="
+        position:fixed;
+        bottom:24px;
+        right:24px;
+        z-index:9999;
+        width:44px;
+        height:44px;
+        border-radius:50%;
+        border:1.5px solid rgba(255,255,255,0.35);
+        background:rgba(0,0,0,0.45);
+        backdrop-filter:blur(8px);
+        -webkit-backdrop-filter:blur(8px);
+        cursor:pointer;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:#fff;
+        transition:background 0.2s,transform 0.15s;
+    "
+    onmouseenter="this.style.background='rgba(0,0,0,0.65)';this.style.transform='scale(1.08)'"
+    onmouseleave="this.style.background='rgba(0,0,0,0.45)';this.style.transform='scale(1)'"
+>
+    <!-- Sound ON icon -->
+    <svg class="icon-on" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+    </svg>
+    <!-- Sound OFF icon -->
+    <svg class="icon-off" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/>
+        <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+</button>
 
 </body>
 </html>
