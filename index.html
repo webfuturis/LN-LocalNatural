@@ -778,6 +778,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const iconOn  = btn.querySelector('.icon-on');
     const iconOff = btn.querySelector('.icon-off');
     let playing = false;
+    let userMuted = false;
 
     function setPlaying(val) {
         playing = val;
@@ -786,12 +787,37 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.setAttribute('aria-label', playing ? 'Silenciar música' : 'Reproduzir música');
     }
 
-    btn.addEventListener('click', function() {
-        if (!playing) {
-            audio.play().then(function() { setPlaying(true); }).catch(function() {});
-        } else {
+    function startAudio() {
+        audio.play().then(function() { setPlaying(true); }).catch(function() {});
+    }
+
+    // Try autoplay immediately
+    startAudio();
+
+    // If blocked, start on first user interaction
+    function onFirstInteraction() {
+        if (!playing && !userMuted) {
+            startAudio();
+        }
+        document.removeEventListener('click', onFirstInteraction);
+        document.removeEventListener('scroll', onFirstInteraction);
+        document.removeEventListener('keydown', onFirstInteraction);
+        document.removeEventListener('touchstart', onFirstInteraction);
+    }
+    document.addEventListener('click', onFirstInteraction);
+    document.addEventListener('scroll', onFirstInteraction);
+    document.addEventListener('keydown', onFirstInteraction);
+    document.addEventListener('touchstart', onFirstInteraction);
+
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (playing) {
             audio.pause();
             setPlaying(false);
+            userMuted = true;
+        } else {
+            audio.play().then(function() { setPlaying(true); }).catch(function() {});
+            userMuted = false;
         }
     });
 
