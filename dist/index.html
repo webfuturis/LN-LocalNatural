@@ -27,7 +27,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -75,6 +75,7 @@
         }
         .nav-scrolled .nav-link { color: #1A1A18 !important; }
         .nav-scrolled .nav-logo-text { color: #1A1A18 !important; }
+        .nav-scrolled .nav-logo-icon { filter: none !important; }
 
         /* ── Gallery ─────────────────────── */
         .gallery-item { overflow: hidden; position: relative; cursor: pointer; background: #E5E2DC; }
@@ -129,6 +130,40 @@
 
         /* ── Decorative ──────────────────── */
         .hr-gold { height: 1px; background: linear-gradient(90deg, transparent, #C4A76C, transparent); border: none; }
+
+        /* ── Editorial Quote ─────────────────── */
+        .quote-section { background: #FAFAF7; }
+        .quote-mark {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 7rem;
+            line-height: 0.6;
+            color: #C4A76C;
+            opacity: 0.45;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-style: normal;
+            font-weight: 400;
+            user-select: none;
+            letter-spacing: -0.02em;
+        }
+        .quote-editorial {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            line-height: 1.55;
+            letter-spacing: 0.005em;
+            color: #222220;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .quote-rule {
+            width: 40px;
+            height: 1px;
+            background: #C4A76C;
+            margin: 2rem auto 0;
+            opacity: 0.7;
+        }
         @keyframes pulse-ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2.5); opacity: 0; } }
         .map-dot::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: rgba(45,122,79,0.3); animation: pulse-ring 2s ease-out infinite; }
 
@@ -160,7 +195,28 @@
      ═══════════════════════════════════════════════════════════════ -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="background: transparent;">
     <div class="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
-        <a href="#" class="flex items-center">
+        <a href="#" class="flex items-center gap-2.5" aria-label="Go to homepage">
+            <!-- LN symbol: full green circle + dark building bars + inner green chevrons -->
+            <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="nav-logo-icon flex-shrink-0" style="filter: drop-shadow(0 1px 3px rgba(0,0,0,0.45));">
+                <defs>
+                    <clipPath id="ln-circle-clip">
+                        <circle cx="50" cy="50" r="38"/>
+                    </clipPath>
+                </defs>
+                <!-- Full green circle ring -->
+                <circle cx="50" cy="50" r="43" stroke="#7DC142" stroke-width="9" fill="none"/>
+                <!-- Building bars clipped inside circle -->
+                <g clip-path="url(#ln-circle-clip)">
+                    <rect x="24" y="42" width="9" height="46" rx="2" fill="#2D3B4E"/>
+                    <rect x="37" y="29" width="9" height="59" rx="2" fill="#2D3B4E"/>
+                    <rect x="50" y="22" width="9" height="66" rx="2" fill="#2D3B4E"/>
+                    <rect x="63" y="35" width="9" height="53" rx="2" fill="#2D3B4E"/>
+                    <!-- Green chevron left -->
+                    <path d="M18 76 L26 64 L30 70 L22 82 Z" fill="#7DC142"/>
+                    <!-- Green chevron right -->
+                    <path d="M82 76 L74 64 L70 70 L78 82 Z" fill="#7DC142"/>
+                </g>
+            </svg>
             <span class="nav-logo-text text-white text-sm font-medium tracking-tight">LN Local Natural</span>
         </a>
         <div class="hidden md:flex items-center gap-8">
@@ -236,13 +292,13 @@
 <!-- ═══════════════════════════════════════════════════════════════
      INTRO QUOTE
      ═══════════════════════════════════════════════════════════════ -->
-<section class="py-20 md:py-28 bg-cream">
-    <div class="max-w-5xl mx-auto px-6 md:px-12 text-center reveal">
-        <i data-lucide="quote" class="w-8 h-8 text-sand/40 mx-auto mb-6"></i>
-        <blockquote class="quote-text text-ink text-2xl md:text-3xl lg:text-4xl font-light tracking-tight" style="line-height:1.4;max-width:860px;margin:0 auto;">
+<section class="quote-section py-24 md:py-36">
+    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center reveal">
+        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+        <blockquote class="quote-editorial">
             A 5 minutos do mar e do Rio Cávado, esta moradia oferece o raro privilégio de viver entre a brisa do oceano, a serenidade do rio e a calma da natureza.
         </blockquote>
-        <div class="hr-gold w-16 mx-auto mt-10"></div>
+        <div class="quote-rule"></div>
     </div>
 </section>
 
@@ -259,11 +315,11 @@
             <p class="text-ink-muted text-sm font-light max-w-sm">Da arquitetura moderna aos detalhes interiores, cada espaço foi pensado para harmonizar com a paisagem envolvente.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-3 md:h-[600px] reveal reveal-delay-1">
-            <div class="gallery-item md:col-span-2 md:row-span-2 rounded-sm h-[300px] md:h-auto" onclick="openLightbox(0)"><img src="/Galeria_Photo_1.jpg" alt="Vista exterior com piscina"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(1)"><img src="/Galeria_Photo_2.jpg" alt="Vista lateral exterior"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(2)"><img src="/Galeria_Photo_3.jpg" alt="Jardim com piscina"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(3)"><img src="/Galeria_Photo_4.jpg" alt="Entrada e garagem"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(4)"><img src="/Galeria_Photo_5.jpg" alt="Vista traseira com piscina"></div>
+            <div class="gallery-item md:col-span-2 md:row-span-2 rounded-sm h-[300px] md:h-auto" onclick="openLightbox(0)"><img src="/assets/Galeria_Photo_1-3YPi6QVA.jpg" alt="Vista exterior com piscina"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(1)"><img src="/assets/Galeria_Photo_2-V3eN4WPO.jpg" alt="Vista lateral exterior"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(2)"><img src="/assets/Galeria_Photo_3-n0x-dYyQ.jpg" alt="Jardim com piscina"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(3)"><img src="/assets/Galeria_Photo_4-D2KKqU9U.jpg" alt="Entrada e garagem"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(4)"><img src="/assets/Galeria_Photo_5-CS7NA5Q8.jpg" alt="Vista traseira com piscina"></div>
         </div>
         <div class="mt-6 flex items-center justify-between reveal reveal-delay-2">
             <p class="text-ink-muted text-xs font-light">Clique nas imagens para ampliar</p>
@@ -346,10 +402,10 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/RioCavado.jpg" alt="Rio Cávado ao pôr do sol" style="object-position: center 60%"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/esposende-portugal.jpg" alt="Vista panorâmica de Esposende" style="object-position: center 30%"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/A28.jpg" alt="Acesso pela A28" style="object-position: center center"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/airport.jpeg" alt="Aeroporto Francisco Sá Carneiro" style="object-position: center center"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/assets/RioCavado-BAMpZkxd.jpg" alt="Rio Cávado ao pôr do sol" style="object-position: center 60%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/assets/esposende-portugal-CBH4qHAB.jpg" alt="Vista panorâmica de Esposende" style="object-position: center 30%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/assets/A28-CXTHYFON.jpg" alt="Acesso pela A28" style="object-position: center center"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/assets/airport-tO2ENQsi.jpeg" alt="Aeroporto Francisco Sá Carneiro" style="object-position: center center"></div>
                 </div>
             </div>
         </div>
@@ -372,7 +428,7 @@
                 <h2 class="text-ink text-3xl md:text-4xl font-light tracking-tight mt-2 mb-6">Decisões de acabamento<br>e materiais de qualidade</h2>
                 <p class="text-ink-muted text-sm font-light leading-relaxed mb-8">Cada material foi selecionado não apenas pela estética, mas pela durabilidade, sustentabilidade e conforto que proporciona. A moradia reflete um compromisso com a excelência construtiva, onde cada detalhe contribui para uma experiência de vida superior.</p>
                 <div class="activity-card rounded-sm h-[300px] md:h-[380px]">
-                    <img src="/Image_30-04-2026_at_13.49.png" alt="Acabamentos de qualidade" style="object-position: center center">
+                    <img src="/assets/Image_30-04-2026_at_13.49-BL5R6zQm.png" alt="Acabamentos de qualidade" style="object-position: center center">
                 </div>
             </div>
             <div class="flex flex-col justify-center reveal reveal-delay-2">
@@ -437,7 +493,7 @@
                 <span class="text-[11px] font-semibold uppercase tracking-[0.15em]">Enviar Mensagem</span>
             </a>
             <!-- Brochure -->
-            <a href="/LN-Exclusivo_-_Moradia_Luxo_T4.pdf" download class="flex items-center justify-center gap-2.5 rounded-sm border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-300 px-6 py-4 text-white/60 hover:text-white/90">
+            <a href="public/LN-Exclusivo_-_Moradia_Luxo_T4.pdf" download class="flex items-center justify-center gap-2.5 rounded-sm border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-300 px-6 py-4 text-white/60 hover:text-white/90">
                 <i data-lucide="download" class="w-4 h-4 flex-shrink-0"></i>
                 <span class="text-[11px] font-semibold uppercase tracking-[0.15em]">Download de Brochura</span>
             </a>
@@ -660,21 +716,21 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 // First 5 entries match the 5 visible preview tiles (index 0–4).
 // Append future batches here — lightbox navigation updates automatically.
 const galleryImages = [
-    '/Galeria_Photo_1.jpg',
-    '/Galeria_Photo_2.jpg',
-    '/Galeria_Photo_3.jpg',
-    '/Galeria_Photo_4.jpg',
-    '/Galeria_Photo_5.jpg',
-    '/Galeria_Photo_6.jpg',
-    '/Galeria_Photo_7.jpg',
-    '/Galeria_Photo_8.jpg',
-    '/Galeria_Photo_9.jpg',
-    '/Galeria_Photo_10.jpg',
-    '/Galeria_Photo_11.jpg',
-    '/Galeria_Photo_12.jpg',
-    '/Galeria_Photo_13.jpg',
-    '/Galeria_Photo_14.jpg',
-    '/Galeria_Photo_15.jpg',
+    'public/Galeria_Photo_1.jpg',
+    'public/Galeria_Photo_2.jpg',
+    'public/Galeria_Photo_3.jpg',
+    'public/Galeria_Photo_4.jpg',
+    'public/Galeria_Photo_5.jpg',
+    'public/Galeria_Photo_6.jpg',
+    'public/Galeria_Photo_7.jpg',
+    'public/Galeria_Photo_8.jpg',
+    'public/Galeria_Photo_9.jpg',
+    'public/Galeria_Photo_10.jpg',
+    'public/Galeria_Photo_11.jpg',
+    'public/Galeria_Photo_12.jpg',
+    'public/Galeria_Photo_13.jpg',
+    'public/Galeria_Photo_14.jpg',
+    'public/Galeria_Photo_15.jpg',
 ];
 
 // Hero still uses the remote image from CFG
