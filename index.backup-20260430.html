@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moradia T4 com Piscina e Vista Mar | Esposende — LN Local Natural</title>
+    <meta name="description" content="Moradia T4 de arquitetura contemporânea em Esposende, 1000m² de terreno, piscina com eletrolise de sal, vista sobre o mar. A 5 min do mar e do Rio Cávado.">
+    <meta name="keywords" content="moradia esposende, casa mar esposende, t4 piscina vista mar, imóvel luxo norte portugal, ln local natural">
+    <meta name="author" content="LN — Local Natural, Lda.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Moradia T4 com Piscina e Vista Mar | Esposende">
+    <meta property="og:description" content="Arquitetura de luxo entre a natureza e o mar. 1000m², 297m², 4 quartos, piscina. Rua da Estrada Real, Esposende.">
+    <meta property="og:image" content="https://z-cdn-media.chatglm.cn/files/dca8eab2-1b86-4b55-87d3-aaa8fea30eb3.jpeg?auth_key=1877478027-4dd1304dc3ab4b1d9dcf3e6c116164d6-0-ee3f554726e72cfa67f870fced3a6719">
+    <meta property="og:url" content="https://www.ln-localnatural.pt">
+    <meta property="og:site_name" content="LN Local Natural">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moradia T4 com Piscina e Vista Mar | Esposende">
+    <meta name="twitter:description" content="Arquitetura de luxo entre a natureza e o mar. 1000m², 297m², 4 quartos, piscina.">
+    <meta name="twitter:image" content="https://z-cdn-media.chatglm.cn/files/dca8eab2-1b86-4b55-87d3-aaa8fea30eb3.jpeg?auth_key=1877478027-4dd1304dc3ab4b1d9dcf3e6c116164d6-0-ee3f554726e72cfa67f870fced3a6719">
+
+    <link rel="canonical" href="https://www.ln-localnatural.pt">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { DEFAULT: '#2D7A4F', light: '#3A9B64', dark: '#1F5C38' },
+                        sand: { DEFAULT: '#C4A76C', light: '#D4BC8A', dark: '#A88D55' },
+                        cream: '#FAFAF7',
+                        warm: { 100: '#F5F3EE', 200: '#EBE8E1', 300: '#E5E2DC', 400: '#D4D0C8' },
+                        ink: { DEFAULT: '#1A1A18', light: '#2A2A27', muted: '#6B6B64' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: #1A1A18; background: #FAFAF7; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        img { display: block; max-width: 100%; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #FAFAF7; }
+        ::-webkit-scrollbar-thumb { background: #C4A76C; border-radius: 3px; }
+
+        /* ── Hero ─────────────────────────── */
+        .hero-overlay {
+            background: linear-gradient(180deg,
+                rgba(26,26,24,0.25) 0%,
+                rgba(26,26,24,0.08) 30%,
+                rgba(26,26,24,0.45) 70%,
+                rgba(26,26,24,0.90) 100%);
+        }
+        .hero-img-wrap { position: absolute; inset: 0; background: #E5E2DC; }
+        .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* ── Navigation ──────────────────── */
+        .nav-scrolled {
+            background: rgba(250,250,247,0.95) !important;
+            backdrop-filter: blur(16px) !important;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06) !important;
+        }
+        .nav-scrolled .nav-link { color: #1A1A18 !important; }
+        .nav-scrolled .nav-logo-text { color: #1A1A18 !important; }
+
+        /* ── Gallery ─────────────────────── */
+        .gallery-item { overflow: hidden; position: relative; cursor: pointer; background: #E5E2DC; }
+        .gallery-item img { transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item:hover img { transform: scale(1.06); }
+        .gallery-item::after { content: ''; position: absolute; inset: 0; background: rgba(26,26,24,0); transition: background 0.4s; }
+        .gallery-item:hover::after { background: rgba(26,26,24,0.12); }
+
+        /* ── Lightbox ────────────────────── */
+        .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(10,10,8,0.93); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; backdrop-filter: blur(8px); }
+        .lightbox.active { opacity: 1; pointer-events: all; }
+        .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 4px; }
+
+        /* ── Reveal Animations ───────────── */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ── Stats ───────────────────────── */
+        .stat-line { width: 0; height: 1px; background: #C4A76C; transition: width 1.2s cubic-bezier(0.25,0.46,0.45,0.94); }
+        .visible .stat-line { width: 48px; }
+
+        /* ── Cards ───────────────────────── */
+        .spec-card { transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.5s; }
+        .spec-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(26,26,24,0.1); }
+        .material-card { transition: background 0.4s, transform 0.4s; }
+        .material-card:hover { background: #F5F3EE; transform: translateY(-2px); }
+
+        /* ── Activity Cards ──────────────── */
+        .activity-card { overflow: hidden; background: #E5E2DC; }
+        .activity-card img { transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); width: 100%; height: 100%; object-fit: cover; }
+        .activity-card:hover img { transform: scale(1.08); }
+
+        /* ── Location section unified tone ── */
+        .loc-img {
+            filter: brightness(1.05) contrast(1.06) saturate(0.88) sepia(0.10) hue-rotate(-5deg);
+            transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.35s ease;
+        }
+        .activity-card:hover .loc-img {
+            transform: scale(1.08);
+            filter: brightness(1.08) contrast(1.10) saturate(0.95) sepia(0.07) hue-rotate(-4deg);
+        }
+
+        /* ── CTA Buttons ─────────────────── */
+        .cta-glow { background: linear-gradient(135deg, #2D7A4F, #3A9B64); box-shadow: 0 8px 40px rgba(45,122,79,0.3); transition: box-shadow 0.4s, transform 0.4s; }
+        .cta-glow:hover { box-shadow: 0 12px 50px rgba(45,122,79,0.45); transform: translateY(-2px); }
+        .cta-sand { box-shadow: 0 8px 40px rgba(196,167,108,0.25); transition: box-shadow 0.4s, transform 0.4s; }
+        .cta-sand:hover { box-shadow: 0 12px 50px rgba(196,167,108,0.4); transform: translateY(-2px); }
+
+        /* ── Decorative ──────────────────── */
+        .hr-gold { height: 1px; background: linear-gradient(90deg, transparent, #C4A76C, transparent); border: none; }
+        @keyframes pulse-ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2.5); opacity: 0; } }
+        .map-dot::before { content: ''; position: absolute; inset: -4px; border-radius: 50%; background: rgba(45,122,79,0.3); animation: pulse-ring 2s ease-out infinite; }
+
+        /* ── Toast ───────────────────────── */
+        .toast { position: fixed; bottom: 24px; right: 24px; z-index: 200; background: #1A1A18; color: #FAFAF7; padding: 16px 24px; border-radius: 8px; font-size: 14px; font-weight: 400; transform: translateY(100px); opacity: 0; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.5s; border-left: 3px solid #2D7A4F; max-width: 420px; }
+        .toast.show { transform: translateY(0); opacity: 1; }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONFIGURATION — Edit these values in the <script> section below
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-label="Galeria de imagens">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10" aria-label="Fechar"><i data-lucide="x" class="w-8 h-8"></i></button>
+    <button onclick="event.stopPropagation(); navigateLightbox(-1)" class="absolute left-4 md:left-8 text-white/50 hover:text-white transition-colors z-10" aria-label="Anterior"><i data-lucide="chevron-left" class="w-10 h-10"></i></button>
+    <button onclick="event.stopPropagation(); navigateLightbox(1)" class="absolute right-4 md:right-8 text-white/50 hover:text-white transition-colors z-10" aria-label="Seguinte"><i data-lucide="chevron-right" class="w-10 h-10"></i></button>
+    <img id="lightbox-img" src="" alt="Property photo" onclick="event.stopPropagation()">
+    <div id="lightbox-counter" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-xs font-light tracking-[0.15em] select-none"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="background: transparent;">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center">
+            <span class="nav-logo-text text-white text-sm font-medium tracking-tight">LN Local Natural</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#galeria" class="nav-link text-white/80 hover:text-white text-[11px] font-medium uppercase tracking-[0.2em] transition-colors">Galeria</a>
+            <a href="#propriedade" class="nav-link text-white/80 hover:text-white text-[11px] font-medium uppercase tracking-[0.2em] transition-colors">Propriedade</a>
+            <a href="#localizacao" class="nav-link text-white/80 hover:text-white text-[11px] font-medium uppercase tracking-[0.2em] transition-colors">Localização</a>
+            <a href="#acabamentos" class="nav-link text-white/80 hover:text-white text-[11px] font-medium uppercase tracking-[0.2em] transition-colors">Acabamentos</a>
+            <a href="#contacto" class="bg-brand text-white text-[11px] font-semibold uppercase tracking-[0.15em] px-5 py-2.5 rounded-sm hover:bg-brand-light transition-colors">Agendar Visita</a>
+        </div>
+        <button id="mobile-toggle" class="md:hidden text-white" onclick="toggleMobileMenu()" aria-label="Menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 transition-all duration-500" style="background: rgba(250,250,247,0.98); backdrop-filter: blur(16px);">
+        <div class="px-6 py-6 flex flex-col gap-4">
+            <a href="#galeria" onclick="toggleMobileMenu()" class="text-ink text-sm font-medium py-2">Galeria</a>
+            <a href="#propriedade" onclick="toggleMobileMenu()" class="text-ink text-sm font-medium py-2">Propriedade</a>
+            <a href="#localizacao" onclick="toggleMobileMenu()" class="text-ink text-sm font-medium py-2">Localização</a>
+            <a href="#acabamentos" onclick="toggleMobileMenu()" class="text-ink text-sm font-medium py-2">Acabamentos</a>
+            <a href="#contacto" onclick="toggleMobileMenu()" class="bg-brand text-white text-center text-sm font-semibold py-3 rounded-sm mt-2">Agendar Visita</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="relative h-screen min-h-[700px] flex items-end overflow-hidden">
+    <div class="hero-img-wrap">
+        <img data-hero src="" alt="Moradia moderna T4 com piscina e vista mar, Esposende">
+    </div>
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+        <div class="max-w-2xl">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-8 h-[1px] bg-sand"></div>
+                <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">Esposende · Estrada Real</span>
+            </div>
+            <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] mb-6">
+                Entre o verde da natureza<br>
+                e o azul do mar,<br>
+                <span class="font-normal">equilíbrio e elegância absolutos</span>
+            </h1>
+            <p class="text-white/70 text-base md:text-lg font-light leading-relaxed max-w-lg mb-10">
+                Moradia T4 de arquitetura contemporânea, inserida num terreno de 1&nbsp;000&nbsp;m² com piscina, vista soberba sobre o mar e o equilíbrio perfeito entre conforto e natureza.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contacto" class="cta-glow inline-flex items-center justify-center gap-2 text-white text-[11px] font-semibold uppercase tracking-[0.15em] px-8 py-4 rounded-sm">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    Agendar Visita
+                </a>
+                <a href="#galeria" class="inline-flex items-center justify-center gap-2 border border-white/30 text-white text-[11px] font-semibold uppercase tracking-[0.15em] px-8 py-4 rounded-sm hover:bg-white/10 transition-colors">
+                    <i data-lucide="images" class="w-4 h-4"></i>
+                    Ver Galeria
+                </a>
+            </div>
+        </div>
+        <div class="hidden lg:flex absolute right-12 bottom-24 gap-12">
+            <div class="text-right"><div class="text-white text-3xl font-light">4</div><div class="text-white/40 text-[10px] uppercase tracking-[0.2em] mt-1">Quartos</div></div>
+            <div class="text-right"><div class="text-white text-3xl font-light">297<span class="text-lg text-white/50">m²</span></div><div class="text-white/40 text-[10px] uppercase tracking-[0.2em] mt-1">Construção</div></div>
+            <div class="text-right"><div class="text-white text-3xl font-light">1000<span class="text-lg text-white/50">m²</span></div><div class="text-white/40 text-[10px] uppercase tracking-[0.2em] mt-1">Terreno</div></div>
+        </div>
+    </div>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
+        <i data-lucide="chevron-down" class="w-5 h-5 text-white/40"></i>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     INTRO QUOTE
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="py-20 md:py-28 bg-cream">
+    <div class="max-w-5xl mx-auto px-6 md:px-12 text-center reveal">
+        <i data-lucide="quote" class="w-8 h-8 text-sand/40 mx-auto mb-6"></i>
+        <blockquote class="quote-text text-ink text-2xl md:text-3xl lg:text-4xl font-light tracking-tight" style="line-height:1.4;max-width:860px;margin:0 auto;">
+            A 5 minutos do mar e do Rio Cávado, esta moradia oferece o raro privilégio de viver entre a brisa do oceano, a serenidade do rio e a calma da natureza.
+        </blockquote>
+        <div class="hr-gold w-16 mx-auto mt-10"></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     GALLERY
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="galeria" class="py-20 md:py-28 bg-warm-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 reveal">
+            <div>
+                <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">Galeria</span>
+                <h2 class="text-ink text-3xl md:text-4xl font-light tracking-tight mt-2">Cada ângulo, uma descoberta</h2>
+            </div>
+            <p class="text-ink-muted text-sm font-light max-w-sm">Da arquitetura moderna aos detalhes interiores, cada espaço foi pensado para harmonizar com a paisagem envolvente.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-3 md:h-[600px] reveal reveal-delay-1">
+            <div class="gallery-item md:col-span-2 md:row-span-2 rounded-sm h-[300px] md:h-auto" onclick="openLightbox(0)"><img src="/Galeria_Photo_1.jpg" alt="Vista exterior com piscina"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(1)"><img src="/Galeria_Photo_2.jpg" alt="Vista lateral exterior"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(2)"><img src="/Galeria_Photo_3.jpg" alt="Jardim com piscina"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(3)"><img src="/Galeria_Photo_4.jpg" alt="Entrada e garagem"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(4)"><img src="/Galeria_Photo_5.jpg" alt="Vista traseira com piscina"></div>
+        </div>
+        <div class="mt-6 flex items-center justify-between reveal reveal-delay-2">
+            <p class="text-ink-muted text-xs font-light">Clique nas imagens para ampliar</p>
+            <button onclick="openLightbox(0)" class="flex items-center gap-2 text-brand text-xs font-semibold uppercase tracking-[0.15em] hover:text-brand-dark transition-colors">Ver todas <i data-lucide="expand" class="w-3.5 h-3.5"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PROPERTY SPECS
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="propriedade" class="py-20 md:py-28 bg-ink">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="text-center mb-16 reveal">
+            <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">A Propriedade</span>
+            <h2 class="text-white text-3xl md:text-4xl font-light tracking-tight mt-2">Arquitetura de Luxo em<br>Harmonia com a Natureza</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
+            <div class="spec-card bg-white/[0.04] border border-white/[0.06] rounded-sm p-6 md:p-8 text-center reveal"><div class="text-sand text-4xl md:text-5xl font-light mb-2">1000</div><div class="stat-line mx-auto mb-3"></div><div class="text-white/40 text-[10px] uppercase tracking-[0.2em]">m² Terreno</div></div>
+            <div class="spec-card bg-white/[0.04] border border-white/[0.06] rounded-sm p-6 md:p-8 text-center reveal reveal-delay-1"><div class="text-sand text-4xl md:text-5xl font-light mb-2">297</div><div class="stat-line mx-auto mb-3"></div><div class="text-white/40 text-[10px] uppercase tracking-[0.2em]">m² Construção</div></div>
+            <div class="spec-card bg-white/[0.04] border border-white/[0.06] rounded-sm p-6 md:p-8 text-center reveal reveal-delay-2"><div class="text-sand text-4xl md:text-5xl font-light mb-2">4</div><div class="stat-line mx-auto mb-3"></div><div class="text-white/40 text-[10px] uppercase tracking-[0.2em]">Quartos</div></div>
+            <div class="spec-card bg-white/[0.04] border border-white/[0.06] rounded-sm p-6 md:p-8 text-center reveal reveal-delay-3"><div class="text-sand text-4xl md:text-5xl font-light mb-2">4</div><div class="stat-line mx-auto mb-3"></div><div class="text-white/40 text-[10px] uppercase tracking-[0.2em]">Casas de Banho</div></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 md:gap-16">
+            <div class="reveal">
+                <h3 class="text-white text-lg font-medium mb-6 flex items-center gap-3"><i data-lucide="layout-grid" class="w-5 h-5 text-sand"></i>Espaços da Moradia</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="bed-double" class="w-5 h-5 text-brand-light"></i></div><div><div class="text-white text-sm font-medium">3 Quartos Master</div><div class="text-white/40 text-xs font-light mt-0.5">Com varanda privada e vista soberba sobre o mar</div></div></div>
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="bed-single" class="w-5 h-5 text-brand-light"></i></div><div><div class="text-white text-sm font-medium">1 Quarto Adicional</div><div class="text-white/40 text-xs font-light mt-0.5">Espaço versátil, ideal para hóspedes ou escritório</div></div></div>
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-sand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="sofa" class="w-5 h-5 text-sand"></i></div><div><div class="text-white text-sm font-medium">Sala & Cozinha Open Space</div><div class="text-white/40 text-xs font-light mt-0.5">Área ampla e luminosa com ligação direta ao exterior</div></div></div>
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-sand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="chef-hat" class="w-5 h-5 text-sand"></i></div><div><div class="text-white text-sm font-medium">Cozinha Equipada</div><div class="text-white/40 text-xs font-light mt-0.5">Móveis e eletrodomésticos de alta gama incluídos</div></div></div>
+                </div>
+            </div>
+            <div class="reveal reveal-delay-2">
+                <h3 class="text-white text-lg font-medium mb-6 flex items-center gap-3"><i data-lucide="sun" class="w-5 h-5 text-sand"></i>Espaços Exteriores</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="waves" class="w-5 h-5 text-brand-light"></i></div><div><div class="text-white text-sm font-medium">Piscina com Eletrolise de Sal</div><div class="text-white/40 text-xs font-light mt-0.5">Tratamento sustentável e saudável, sem produtos químicos</div></div></div>
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-brand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="flame" class="w-5 h-5 text-brand-light"></i></div><div><div class="text-white text-sm font-medium">Churrasqueira Exterior</div><div class="text-white/40 text-xs font-light mt-0.5">Espaço perfeito para refeições ao ar livre</div></div></div>
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-sand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="car" class="w-5 h-5 text-sand"></i></div><div><div class="text-white text-sm font-medium">Garagem Fechada para 2 Viaturas</div><div class="text-white/40 text-xs font-light mt-0.5">Mais 1 lugar de estacionamento exterior</div></div></div>
+                    <div class="flex items-start gap-4 p-4 bg-white/[0.03] rounded-sm border border-white/[0.04]"><div class="w-10 h-10 rounded-sm bg-sand/20 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="trees" class="w-5 h-5 text-sand"></i></div><div><div class="text-white text-sm font-medium">Jardim Generoso</div><div class="text-white/40 text-xs font-light mt-0.5">Área verde extensa com potencial para paisagismo</div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 pt-16 border-t border-white/[0.06] reveal">
+            <h3 class="text-white text-lg font-medium mb-8 text-center">Pontos Fortes</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="flex items-center gap-3"><i data-lucide="sun-dim" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Exposição solar Sul/Poente</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="thermometer" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Piso radiante em toda a casa</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="zap" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Alta eficiência energética</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="eye" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Vistas abertas sobre o mar</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="shield-check" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Zona calma e residencial</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Total privacidade</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="building-2" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Linhas arquitetónicas modernas</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="gem" class="w-5 h-5 text-sand flex-shrink-0"></i><span class="text-white/60 text-sm font-light">Acabamentos de elevada qualidade</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LOCATION & LIFESTYLE
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="localizacao" class="py-20 md:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="text-center mb-16 reveal">
+            <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">Localização & Estilo de Vida</span>
+            <h2 class="text-ink text-3xl md:text-4xl font-light tracking-tight mt-2">Natureza, Rio e Mar.<br>Três mundos, um só lugar.</h2>
+            <p class="text-ink-muted text-sm font-light max-w-xl mx-auto mt-4">Esposende é um dos destinos mais procurados do norte de Portugal — onde a riqueza natural se une a uma qualidade de vida incomparável.</p>
+        </div>
+        <div class="relative bg-warm-100 rounded-sm p-8 md:p-12 mb-16 reveal overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full opacity-[0.03]" style="background: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+            <div class="relative grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-ink text-lg font-medium mb-6">Rua da Estrada Real, Esposende</h3>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4"><div class="w-2 h-2 rounded-full bg-brand mt-2 flex-shrink-0 relative map-dot"></div><div><div class="text-ink text-sm font-medium">Mar — 5 minutos</div><div class="text-ink-muted text-xs font-light mt-0.5">Praias oceânicas com dunas preservadas</div></div></div>
+                        <div class="flex items-start gap-4"><div class="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0 relative map-dot"></div><div><div class="text-ink text-sm font-medium">Rio Cávado — 5 minutos</div><div class="text-ink-muted text-xs font-light mt-0.5">Praias fluviais e atividades aquáticas</div></div></div>
+                        <div class="flex items-start gap-4"><div class="w-2 h-2 rounded-full bg-sand mt-2 flex-shrink-0 relative map-dot"></div><div><div class="text-ink text-sm font-medium">Aeroporto Sá Carneiro — 40 km</div><div class="text-ink-muted text-xs font-light mt-0.5">Acesso direto e rápido</div></div></div>
+                        <div class="flex items-start gap-4"><div class="w-2 h-2 rounded-full bg-ink-muted mt-2 flex-shrink-0"></div><div><div class="text-ink text-sm font-medium">Porto, Braga & Viana do Castelo</div><div class="text-ink-muted text-xs font-light mt-0.5">Todas a menos de 1 hora de distância</div></div></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/RioCavado.jpg" alt="Rio Cávado ao pôr do sol" style="object-position: center 60%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/esposende-portugal.jpg" alt="Vista panorâmica de Esposende" style="object-position: center 30%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/A28.jpg" alt="Acesso pela A28" style="object-position: center center"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/airport.jpeg" alt="Aeroporto Francisco Sá Carneiro" style="object-position: center center"></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="reveal"><div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-sm bg-brand/10 flex items-center justify-center"><i data-lucide="wind" class="w-5 h-5 text-brand"></i></div><h4 class="text-ink text-base font-medium">Desportos Aquáticos</h4></div><div class="space-y-2.5"><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Kitesurf & Surf</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Caiaque no Rio Cávado</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Mergulho & Pesca Submarina</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Pesca Desportiva</div></div></div>
+            <div class="reveal reveal-delay-1"><div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-sm bg-brand/10 flex items-center justify-center"><i data-lucide="mountain" class="w-5 h-5 text-brand"></i></div><h4 class="text-ink text-base font-medium">Desportos Terrestres</h4></div><div class="space-y-2.5"><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>BTT — percursos sinalizados</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Trail & Caminhadas</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Motociclismo — estradas panorâmicas</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Trilhos pedestres na serra</div></div></div>
+            <div class="reveal reveal-delay-2"><div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-sm bg-sand/15 flex items-center justify-center"><i data-lucide="landmark" class="w-5 h-5 text-sand-dark"></i></div><h4 class="text-ink text-base font-medium">Cultura & História</h4></div><div class="space-y-2.5"><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Centro Arqueológico de São Lourenço</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Forte de Esposende</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Gastronomia regional</div><div class="flex items-center gap-2.5 text-ink-muted text-sm font-light"><div class="w-1 h-1 rounded-full bg-sand"></div>Festividades tradicionais</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FINISHINGS & MATERIALS
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="acabamentos" class="py-20 md:py-28 bg-warm-100">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+            <div class="reveal">
+                <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">Acabamentos</span>
+                <h2 class="text-ink text-3xl md:text-4xl font-light tracking-tight mt-2 mb-6">Decisões de acabamento<br>e materiais de qualidade</h2>
+                <p class="text-ink-muted text-sm font-light leading-relaxed mb-8">Cada material foi selecionado não apenas pela estética, mas pela durabilidade, sustentabilidade e conforto que proporciona. A moradia reflete um compromisso com a excelência construtiva, onde cada detalhe contribui para uma experiência de vida superior.</p>
+                <div class="activity-card rounded-sm h-[300px] md:h-[380px]">
+                    <img src="/Image_30-04-2026_at_13.49.png" alt="Acabamentos de qualidade" style="object-position: center center">
+                </div>
+            </div>
+            <div class="flex flex-col justify-center reveal reveal-delay-2">
+                <div class="space-y-1">
+                    <div class="material-card flex items-start gap-5 p-5 rounded-sm border border-transparent cursor-default"><div class="w-12 h-12 rounded-sm bg-ink/[0.04] flex items-center justify-center flex-shrink-0"><i data-lucide="grid-3x3" class="w-5 h-5 text-ink-muted"></i></div><div><div class="text-ink text-sm font-medium mb-1">Pavimentos Premium</div><div class="text-ink-muted text-xs font-light leading-relaxed">Porcelanato de alta resistência com efeito natural, selecionado para durabilidade e facilidade de manutenção.</div></div></div>
+                    <div class="material-card flex items-start gap-5 p-5 rounded-sm border border-transparent cursor-default"><div class="w-12 h-12 rounded-sm bg-ink/[0.04] flex items-center justify-center flex-shrink-0"><i data-lucide="thermometer-sun" class="w-5 h-5 text-ink-muted"></i></div><div><div class="text-ink text-sm font-medium mb-1">Climatização por Piso Radiante</div><div class="text-ink-muted text-xs font-light leading-relaxed">Conforto térmico uniforme em todas as divisões, com controlo eficiente e silencioso.</div></div></div>
+                    <div class="material-card flex items-start gap-5 p-5 rounded-sm border border-transparent cursor-default"><div class="w-12 h-12 rounded-sm bg-ink/[0.04] flex items-center justify-center flex-shrink-0"><i data-lucide="maximize-2" class="w-5 h-5 text-ink-muted"></i></div><div><div class="text-ink text-sm font-medium mb-1">Esquadrias de Alto Desempenho</div><div class="text-ink-muted text-xs font-light leading-relaxed">Fachadas envidraçadas de grandes dimensões com corte térmico e duplo vidro, maximizando luz natural e isolamento.</div></div></div>
+                    <div class="material-card flex items-start gap-5 p-5 rounded-sm border border-transparent cursor-default"><div class="w-12 h-12 rounded-sm bg-ink/[0.04] flex items-center justify-center flex-shrink-0"><i data-lucide="cooking-pot" class="w-5 h-5 text-ink-muted"></i></div><div><div class="text-ink text-sm font-medium mb-1">Cozinha Equipada</div><div class="text-ink-muted text-xs font-light leading-relaxed">Mobiliário sob medida com eletrodomésticos de marca reconhecida, integrados num design limpo e funcional.</div></div></div>
+                    <div class="material-card flex items-start gap-5 p-5 rounded-sm border border-transparent cursor-default"><div class="w-12 h-12 rounded-sm bg-ink/[0.04] flex items-center justify-center flex-shrink-0"><i data-lucide="droplets" class="w-5 h-5 text-ink-muted"></i></div><div><div class="text-ink text-sm font-medium mb-1">Piscina com Eletrolise de Sal</div><div class="text-ink-muted text-xs font-light leading-relaxed">Sistema de tratamento de água sustentável, sem cloro — mais saudável, confortável e ecológico.</div></div></div>
+                    <div class="material-card flex items-start gap-5 p-5 rounded-sm border border-transparent cursor-default"><div class="w-12 h-12 rounded-sm bg-ink/[0.04] flex items-center justify-center flex-shrink-0"><i data-lucide="leaf" class="w-5 h-5 text-ink-muted"></i></div><div><div class="text-ink text-sm font-medium mb-1">Eficiência Energética</div><div class="text-ink-muted text-xs font-light leading-relaxed">Isolamento térmico superior, telhado plano com soluções técnicas avançadas e orientação solar otimizada.</div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CTA
+     ═══════════════════════════════════════════════════════════════ -->
+<section id="contacto" class="relative bg-ink overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.03]" style="background: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+    <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand/10 rounded-full blur-[140px]"></div>
+    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-sand/8 rounded-full blur-[100px]"></div>
+
+    <!-- Top band: headline -->
+    <div class="relative z-10 pt-20 md:pt-28 pb-14 md:pb-20 px-6 md:px-12 text-center">
+        <div class="reveal max-w-3xl mx-auto">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <div class="w-8 h-[1px] bg-sand"></div>
+                <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">Agende a Sua Visita Privada</span>
+                <div class="w-8 h-[1px] bg-sand"></div>
+            </div>
+            <h2 class="text-white text-3xl md:text-5xl font-light tracking-tight mb-5">
+                O lar que a sua família<br><span class="font-normal">sempre imaginou</span>
+            </h2>
+            <p class="text-white/50 text-base font-light leading-relaxed max-w-xl mx-auto">
+                4 quartos, espaços generosos, piscina e natureza a poucos minutos do mar. Venha sentir o que as fotografias não conseguem transmitir.
+            </p>
+        </div>
+    </div>
+
+    <!-- Phone highlight card -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 md:px-12 reveal reveal-delay-1">
+        <a id="cta-phone" href="" class="group block rounded-sm border border-white/10 bg-white/[0.04] hover:bg-white/[0.07] transition-all duration-300 px-8 py-8 md:py-10 text-center" style="box-shadow: 0 0 60px rgba(45,122,79,0.12), inset 0 1px 0 rgba(255,255,255,0.06);">
+            <p class="text-white/40 text-[10px] font-semibold uppercase tracking-[0.3em] mb-3">Chamada gratuita — seg a sáb, 9h–19h</p>
+            <div class="flex items-center justify-center gap-4 mb-3">
+                <div class="w-10 h-10 rounded-full bg-brand/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand/30 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-light"></i>
+                </div>
+                <span id="cta-phone-number" class="text-white text-3xl md:text-4xl font-light tracking-wide"></span>
+            </div>
+            <p class="text-white/30 text-xs font-light">Toque para ligar</p>
+        </a>
+    </div>
+
+    <!-- Secondary actions -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 md:px-12 mt-4 reveal reveal-delay-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- WhatsApp -->
+            <a id="cta-whatsapp" href="" target="_blank" class="flex items-center justify-center gap-2.5 rounded-sm border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-300 px-6 py-4 text-white/60 hover:text-white/90">
+                <i data-lucide="message-circle" class="w-4 h-4 flex-shrink-0"></i>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.15em]">Enviar Mensagem</span>
+            </a>
+            <!-- Brochure -->
+            <a href="/LN-Exclusivo_-_Moradia_Luxo_T4.pdf" download class="flex items-center justify-center gap-2.5 rounded-sm border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-300 px-6 py-4 text-white/60 hover:text-white/90">
+                <i data-lucide="download" class="w-4 h-4 flex-shrink-0"></i>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.15em]">Download de Brochura</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Trust bar -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 md:px-12 mt-10 mb-20 md:mb-28 reveal reveal-delay-2">
+        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-white/25 text-[11px] font-light">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand/60"></i>
+                <span>Visita sem compromisso</span>
+            </div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-brand/60"></i>
+                <span>Resposta em menos de 2h</span>
+            </div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-brand/60"></i>
+                <span>Total confidencialidade</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact strip -->
+    <div class="relative z-10 border-t border-white/[0.06] py-8 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 text-white/25 text-xs font-light">
+            <div class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span id="cta-address"></span></div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2"><i data-lucide="globe" class="w-3.5 h-3.5"></i><a id="cta-website" href="" target="_blank" class="hover:text-white/50 transition-colors"></a></div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5"></i><a id="cta-email" href="" class="hover:text-white/50 transition-colors"></a></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════════ -->
+<footer class="bg-[#111110] py-12">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-white/20 text-xs font-light">© <span id="footer-year"></span> LN — Local Natural, Lda. Todos os direitos reservados.</div>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT — Configuration at the top, logic below
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+// ┌─────────────────────────────────────────────────────────────┐
+// │  SITE CONFIGURATION — Edit everything here               │
+// └─────────────────────────────────────────────────────────────┘
+const CFG = {
+
+    // ── Contact Info ─────────────────────────────────────────
+    phone:        '+351929052301',
+    phoneDisplay: '+351 929 052 301',
+    email:        'info@ln-localnatural.pt',
+    website:      'www.ln-localnatural.pt',
+    websiteUrl:   'https://www.ln-localnatural.pt',
+    address:      'Rua da Estrada Real, Esposende',
+    companyName:  'LN — Local Natural, Lda.',
+
+    // ── Images ───────────────────────────────────────────────
+    //    Replace these URLs with your own hosted images.
+    //    All images are pre-tested; if a URL fails, its fallback is used automatically.
+    images: {
+        hero:     'https://z-cdn-media.chatglm.cn/files/dca8eab2-1b86-4b55-87d3-aaa8fea30eb3.jpeg?auth_key=1877478027-4dd1304dc3ab4b1d9dcf3e6c116164d6-0-ee3f554726e72cfa67f870fced3a6719',
+        interior: 'https://ln-localnatural.pt/wp-content/uploads/WhatsApp%20Image%202026-02-25%20at%2015.03.26%20(3).jpeg',
+        exterior: 'https://ln-localnatural.pt/wp-content/uploads/WhatsApp%20Image%202026-02-25%20at%2015.03.26.jpeg',
+        dunas:    'https://z-cdn-media.chatglm.cn/files/efdfd7a6-88a2-4d2f-adde-31aeaca205b9.jpg?auth_key=1877539230-11c6529ea88f47c2894de365f6e433f6-0-90672c901b84ef16308e9cd1cc58f6b4',
+        kite:     'https://z-cdn-media.chatglm.cn/files/d130148c-ff88-4597-8e2f-1693eb3cc539.jpg?auth_key=1877539230-4ce4aef3978a445d90e460f25db8029c-0-413594bf461a0379a77abdf4ebd5a0e6',
+        castro:   'https://z-cdn-media.chatglm.cn/files/94a5cf1a-7f34-4d97-a747-22c60911de0f.jpg?auth_key=1877539230-4129a7a7f3e948e3af66275b4140d799-0-da477ea8f24b72a22f3794241918cf11',
+    },
+
+    // ── Fallback images (Unsplash) ───────────────────────────
+    //    Used automatically if any image above fails to load
+    fallbacks: {
+        interior: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600&auto=format&fit=crop',
+        exterior: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1600&auto=format&fit=crop',
+        dunas:    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop',
+        kite:     'https://images.unsplash.com/photo-1500463959177-e0869687df26?q=80&w=1600&auto=format&fit=crop',
+        castro:   'https://images.unsplash.com/photo-1569587112025-0d460e81a126?q=80&w=1600&auto=format&fit=crop',
+    },
+
+    // ── Brochure ─────────────────────────────────────────────
+    //    Set a URL to link directly to a PDF. Set to '' for toast message only.
+    brochureUrl: '/LN-Exclusivo_-_Moradia_Luxo_T4.pdf',
+
+    // ── Brochure toast message (shown when brochureUrl is empty) ─
+    brochureMessage: 'O brochure será enviado para o seu email em breve. Contacte-nos diretamente para o receber.',
+
+    // ── Alternate server paths to try before fallback ─────────
+    //    Set to [] to skip this step
+    altPaths: {
+        interior: [
+            'https://ln-localnatural.pt/wp-content/uploads/2026/02/WhatsApp%20Image%202026-02-25%20at%2015.03.26%20(3).jpeg',
+        ],
+        exterior: [
+            'https://ln-localnatural.pt/wp-content/uploads/2026/02/WhatsApp%20Image%202026-02-25%20at%2015.03.26.jpeg',
+        ],
+    },
+};
+
+
+// ┌─────────────────────────────────────────────────────────────┐
+// │  APPLICATION LOGIC — No need to edit below this line      │
+// └─────────────────────────────────────────────────────────────┘
+
+// Initialize icons
+lucide.createIcons();
+
+// Populate dynamic elements
+document.getElementById('cta-phone').href = 'tel:' + CFG.phone;
+document.getElementById('cta-phone-number').textContent = CFG.phoneDisplay;
+document.getElementById('cta-whatsapp').href = 'https://wa.me/' + CFG.phone.replace('+', '');
+document.getElementById('cta-address').textContent = CFG.address;
+document.getElementById('cta-website').href = CFG.websiteUrl;
+document.getElementById('cta-website').textContent = CFG.website;
+document.getElementById('cta-email').href = 'mailto:' + CFG.email;
+document.getElementById('cta-email').textContent = CFG.email;
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+
+// ── Gallery images ────────────────────────────────────────────
+// First 5 entries match the 5 visible preview tiles (index 0–4).
+// Append future batches here — lightbox navigation updates automatically.
+const galleryImages = [
+    '/Galeria_Photo_1.jpg',
+    '/Galeria_Photo_2.jpg',
+    '/Galeria_Photo_3.jpg',
+    '/Galeria_Photo_4.jpg',
+    '/Galeria_Photo_5.jpg',
+    '/Galeria_Photo_6.jpg',
+    '/Galeria_Photo_7.jpg',
+    '/Galeria_Photo_8.jpg',
+    '/Galeria_Photo_9.jpg',
+    '/Galeria_Photo_10.jpg',
+    '/Galeria_Photo_11.jpg',
+    '/Galeria_Photo_12.jpg',
+    '/Galeria_Photo_13.jpg',
+    '/Galeria_Photo_14.jpg',
+    '/Galeria_Photo_15.jpg',
+];
+
+// Hero still uses the remote image from CFG
+document.querySelector('[data-hero]').src = CFG.images.hero;
+
+
+// Finishings section interior image
+document.querySelectorAll('[data-gallery="1"]').forEach(el => {
+    el.src = galleryImages[1];
+});
+
+// Navigation scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('nav-scrolled', window.scrollY > 80);
+}, { passive: true });
+
+// Mobile menu
+let mobileOpen = false;
+function toggleMobileMenu() {
+    mobileOpen = !mobileOpen;
+    const menu = document.getElementById('mobile-menu');
+    const toggle = document.getElementById('mobile-toggle');
+    if (mobileOpen) {
+        menu.style.maxHeight = menu.scrollHeight + 'px';
+        toggle.innerHTML = '<i data-lucide="x" class="w-6 h-6 text-ink"></i>';
+    } else {
+        menu.style.maxHeight = '0';
+        toggle.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+    }
+    lucide.createIcons();
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Lightbox ──────────────────────────────────────────────────
+let currentLightbox = 0;
+
+function updateLightboxUI() {
+    document.getElementById('lightbox-img').src = galleryImages[currentLightbox];
+    document.getElementById('lightbox-counter').textContent =
+        (currentLightbox + 1) + ' / ' + galleryImages.length;
+}
+
+function openLightbox(index) {
+    currentLightbox = index;
+    updateLightboxUI();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function navigateLightbox(dir) {
+    currentLightbox = (currentLightbox + dir + galleryImages.length) % galleryImages.length;
+    updateLightboxUI();
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+});
+
+// Touch / swipe support
+(function() {
+    let startX = 0;
+    const lb = document.getElementById('lightbox');
+    lb.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) navigateLightbox(dx < 0 ? 1 : -1);
+    }, { passive: true });
+})();
+
+// Toast
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+}
+</script>
+
+</body>
+</html>
