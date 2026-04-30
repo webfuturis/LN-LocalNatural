@@ -513,12 +513,6 @@ document.getElementById('cta-email').href = 'mailto:' + CFG.email;
 document.getElementById('cta-email').textContent = CFG.email;
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-// Brochure button
-if (CFG.brochureUrl) {
-    document.querySelector('[onclick="showToast(CFG.brochureMessage)"]').onclick = function() {
-        window.open(CFG.brochureUrl, '_blank');
-    };
-}
 
 // ── Gallery images ────────────────────────────────────────────
 // First 5 entries match the 5 visible preview tiles (index 0–4).
