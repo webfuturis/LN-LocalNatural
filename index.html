@@ -587,9 +587,11 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
             100% { transform: translateX(80%); opacity: 0.8; }
         }
         @keyframes foliage-pulse {
-            0%,100% { opacity: 0.4; transform: translateX(0); }
-            40%     { opacity: 1;   transform: translateX(6px); }
-            70%     { opacity: 0.6; transform: translateX(-4px); }
+            0%   { opacity: 0.45; }
+            22%  { opacity: 0.75; }
+            45%  { opacity: 0.55; }
+            68%  { opacity: 1; }
+            100% { opacity: 0.45; }
         }
         @keyframes warm-breathe {
             0%,100% { opacity: 0.4; }
