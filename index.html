@@ -188,16 +188,14 @@
 <!-- ═══════════════════════════════════════════════════════════════
      HERO
      ═══════════════════════════════════════════════════════════════ -->
-<section class="relative h-screen min-h-[700px] flex items-end overflow-hidden">
+<section id="hero-section" class="relative h-screen min-h-[700px] flex items-end overflow-hidden">
     <div class="hero-img-wrap" id="hero-parallax">
         <img id="hero-bg-img" data-hero src="" alt="Moradia moderna T4 com piscina e vista mar, Esposende">
     </div>
-    <!-- z-index 2: atmospheric layers above image, below overlay -->
-    <div id="hero-cloud" style="position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;"></div>
+    <!-- static atmospheric tint layers (z-index 2, animations applied via JS) -->
     <div id="hero-foliage" style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 45% 90% at 90% 55%,rgba(20,45,15,0.15) 0%,transparent 60%);"></div>
     <div id="hero-light" style="position:absolute;z-index:2;pointer-events:none;width:22%;height:30%;bottom:26%;left:36%;background:radial-gradient(ellipse at 50% 55%,rgba(255,200,110,0.18) 0%,transparent 65%);"></div>
-    <div id="hero-shimmer" style="position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;"></div>
-    <!-- z-index 3: dark gradient overlay -->
+    <!-- z-index 3: dark gradient overlay — sits above all anim layers -->
     <div class="hero-overlay absolute inset-0" style="z-index:3;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
         <div class="max-w-2xl">
@@ -571,7 +569,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 (function () {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    // Inject keyframes via a style tag appended to <head> — runs after Tailwind
+    // Inject keyframes — appended to <head> so they land after Tailwind CDN
     const sheet = document.createElement('style');
     sheet.textContent = `
         @keyframes hero-pan {
@@ -579,13 +577,14 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
             50%  { transform: scale(1.08) translateX(-20px); }
             100% { transform: scale(1.05) translateX(0px); }
         }
-        @keyframes cloud-pass-a {
-            0%   { transform: translateX(-110%); }
-            100% { transform: translateX(160vw); }
+        @keyframes cloud-a {
+            0%   { transform: translateX(0); opacity: 0.8; }
+            60%  { opacity: 1; }
+            100% { transform: translateX(60%); opacity: 0.6; }
         }
-        @keyframes cloud-pass-b {
-            0%   { transform: translateX(-80%); }
-            100% { transform: translateX(160vw); }
+        @keyframes cloud-b {
+            0%   { transform: translateX(20%); opacity: 0.6; }
+            100% { transform: translateX(80%); opacity: 0.8; }
         }
         @keyframes foliage-pulse {
             0%,100% { opacity: 0.4; transform: translateX(0); }
@@ -593,14 +592,14 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
             70%     { opacity: 0.6; transform: translateX(-4px); }
         }
         @keyframes warm-breathe {
-            0%,100% { opacity: 0.25; }
+            0%,100% { opacity: 0.4; }
             50%     { opacity: 1; }
         }
         @keyframes shimmer-sweep {
-            0%         { transform: translateX(0)    rotate(-2deg) skewX(-8deg); opacity: 0; }
-            8%         { opacity: 1; }
-            60%        { transform: translateX(440%) rotate(-1deg) skewX(-5deg); opacity: 0.5; }
-            80%,100%   { transform: translateX(460%) rotate(-2deg) skewX(-8deg); opacity: 0; }
+            0%       { transform: translateX(0) rotate(-1.5deg) skewX(-8deg); opacity: 0; }
+            10%      { opacity: 1; }
+            65%      { transform: translateX(350%) rotate(-0.5deg) skewX(-5deg); opacity: 0.8; }
+            85%,100% { transform: translateX(380%) rotate(-1.5deg) skewX(-8deg); opacity: 0; }
         }
     `;
     document.head.appendChild(sheet);
@@ -611,28 +610,28 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
     const img = document.getElementById('hero-bg-img');
     if (img) img.style.cssText += 'transform-origin:center center;animation:hero-pan 55s ease-in-out infinite;will-change:transform;';
 
-    // Cloud drift — two ellipses at different speeds
-    const cloudWrap = document.getElementById('hero-cloud');
-    if (cloudWrap) {
-        ['a','b'].forEach(function(id, i) {
+    // Cloud drift — two large soft blobs, directly on the section (not clipped)
+    const section = document.getElementById('hero-section');
+    if (section) {
+        const clouds = [
+            { top:'0',    w:'70vw', h:'50%', dur:'45s', delay:'0s',   op:'0.18' },
+            { top:'5%',   w:'55vw', h:'38%', dur:'68s', delay:'-22s', op:'0.13' },
+        ];
+        clouds.forEach(function(c, i) {
             const el = document.createElement('div');
-            const w = i === 0 ? '75%' : '55%';
-            const h = i === 0 ? '55%' : '40%';
-            const dur = i === 0 ? '48s' : '72s';
-            const delay = i === 0 ? '0s' : '-25s';
-            const op = i === 0 ? '0.09' : '0.06';
             el.style.cssText = `
                 position:absolute;
-                top:${i === 0 ? '0' : '6%'};
-                left:0; width:${w}; height:${h};
+                top:${c.top}; left:0;
+                width:${c.w}; height:${c.h};
                 border-radius:50%;
-                background:radial-gradient(ellipse 80% 60% at 50% 45%, rgba(255,255,255,${op}) 0%, transparent 65%);
-                animation:cloud-pass-${id} ${dur} linear infinite;
-                animation-delay:${delay};
+                background:radial-gradient(ellipse 75% 55% at 50% 45%, rgba(255,255,255,${c.op}) 0%, transparent 60%);
+                animation:cloud-${i===0?'a':'b'} ${c.dur} linear infinite;
+                animation-delay:${c.delay};
                 will-change:transform;
                 pointer-events:none;
+                z-index:2;
             `;
-            cloudWrap.appendChild(el);
+            section.appendChild(el);
         });
     }
 
@@ -644,20 +643,21 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
     const light = document.getElementById('hero-light');
     if (light) light.style.animation = 'warm-breathe 7s ease-in-out infinite';
 
-    // Pool shimmer band
-    const shimmerWrap = document.getElementById('hero-shimmer');
-    if (shimmerWrap) {
+    // Pool shimmer — appended directly to section to avoid overflow:hidden clip
+    if (section) {
         const band = document.createElement('div');
         band.style.cssText = `
             position:absolute;
-            bottom:21%; left:-45%;
-            width:38%; height:4.5%;
-            background:linear-gradient(90deg, transparent 0%, rgba(180,230,255,0.12) 35%, rgba(255,255,255,0.22) 50%, rgba(180,230,255,0.12) 65%, transparent 100%);
+            bottom:22%; left:5%;
+            width:28vw; height:3%;
+            background:linear-gradient(90deg, transparent 0%, rgba(180,230,255,0.30) 35%, rgba(255,255,255,0.50) 50%, rgba(180,230,255,0.30) 65%, transparent 100%);
+            transform: rotate(-1.5deg) skewX(-8deg);
             animation:shimmer-sweep 9s ease-in-out infinite;
             will-change:transform,opacity;
             pointer-events:none;
+            z-index:2;
         `;
-        shimmerWrap.appendChild(band);
+        section.appendChild(band);
     }
 
     // Parallax on scroll
