@@ -603,6 +603,21 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
             65%      { transform: translateX(350%) rotate(-0.5deg) skewX(-5deg); opacity: 0.8; }
             85%,100% { transform: translateX(380%) rotate(-1.5deg) skewX(-8deg); opacity: 0; }
         }
+        @keyframes eagle-fly {
+            0%   { left: -4%;  top: 28%; opacity: 0; }
+            4%   { opacity: 1; }
+            30%  { left: 20%;  top: 22%; }
+            55%  { left: 43%;  top: 18%; }
+            70%  { left: 65%;  top: 15%; opacity: 1; }
+            88%  { left: 105%; top: 13%; opacity: 0; }
+            100% { left: 105%; top: 13%; opacity: 0; }
+        }
+        @keyframes wing-flap {
+            0%,100% { d: path('M0,-6 C-14,-2 -22,4 -18,10 C-12,6 -6,4 0,5 C6,4 12,6 18,10 C22,4 14,-2 0,-6 Z'); }
+            25%     { d: path('M0,-6 C-14,-8 -22,-2 -18,6  C-12,3 -6,2 0,3  C6,2 12,3 18,6  C22,-2 14,-8 0,-6 Z'); }
+            50%     { d: path('M0,-4 C-14,4  -22,10 -18,14 C-12,9 -6,7 0,8  C6,7 12,9 18,14 C22,10 14,4  0,-4 Z'); }
+            75%     { d: path('M0,-6 C-14,-8 -22,-2 -18,6  C-12,3 -6,2 0,3  C6,2 12,3 18,6  C22,-2 14,-8 0,-6 Z'); }
+        }
     `;
     document.head.appendChild(sheet);
 
@@ -660,6 +675,46 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
             z-index:2;
         `;
         section.appendChild(band);
+    }
+
+    // Eagle soaring across the sky
+    if (section) {
+        const eagleWrap = document.createElement('div');
+        eagleWrap.style.cssText = `
+            position:absolute;
+            width:52px; height:52px;
+            animation:eagle-fly 22s ease-in-out infinite;
+            animation-delay: 3s;
+            will-change:left,top,opacity;
+            pointer-events:none;
+            z-index:4;
+            opacity:0;
+        `;
+        eagleWrap.innerHTML = `<svg viewBox="-26 -18 52 36" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;overflow:visible;">
+            <!-- body -->
+            <ellipse cx="0" cy="2" rx="5" ry="2.5" fill="#1a1008"/>
+            <!-- tail -->
+            <polygon points="0,3 -3,12 3,12" fill="#1a1008"/>
+            <!-- head -->
+            <ellipse cx="4" cy="-1" rx="3" ry="2.5" fill="#1a1008"/>
+            <!-- beak -->
+            <polygon points="7,-1 9.5,0.5 7,1" fill="#c8820a"/>
+            <!-- wings — animated via CSS path morphing -->
+            <path fill="#1a1008" style="animation:wing-flap 1.4s ease-in-out infinite;">
+                <animate attributeName="d" dur="1.4s" repeatCount="indefinite"
+                    values="
+                        M0,-6 C-14,-2 -22,4 -18,10 C-12,6 -6,4 0,5 C6,4 12,6 18,10 C22,4 14,-2 0,-6 Z;
+                        M0,-6 C-14,-8 -22,-2 -18,6  C-12,3 -6,2 0,3  C6,2 12,3 18,6  C22,-2 14,-8 0,-6 Z;
+                        M0,-4 C-14,4  -22,10 -18,14 C-12,9 -6,7 0,8  C6,7 12,9 18,14 C22,10 14,4  0,-4 Z;
+                        M0,-6 C-14,-8 -22,-2 -18,6  C-12,3 -6,2 0,3  C6,2 12,3 18,6  C22,-2 14,-8 0,-6 Z;
+                        M0,-6 C-14,-2 -22,4 -18,10 C-12,6 -6,4 0,5 C6,4 12,6 18,10 C22,4 14,-2 0,-6 Z
+                    "
+                    calcMode="spline"
+                    keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"
+                />
+            </path>
+        </svg>`;
+        section.appendChild(eagleWrap);
     }
 
     // Parallax on scroll
