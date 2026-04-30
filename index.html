@@ -388,39 +388,86 @@
 <!-- ═══════════════════════════════════════════════════════════════
      CTA
      ═══════════════════════════════════════════════════════════════ -->
-<section id="contacto" class="relative py-24 md:py-32 bg-ink overflow-hidden">
+<section id="contacto" class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0 opacity-[0.03]" style="background: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
-    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand/10 rounded-full blur-[120px]"></div>
+    <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand/10 rounded-full blur-[140px]"></div>
     <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-sand/8 rounded-full blur-[100px]"></div>
-    <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">
-        <div class="reveal">
+
+    <!-- Top band: headline -->
+    <div class="relative z-10 pt-20 md:pt-28 pb-14 md:pb-20 px-6 md:px-12 text-center">
+        <div class="reveal max-w-3xl mx-auto">
             <div class="flex items-center justify-center gap-3 mb-6">
                 <div class="w-8 h-[1px] bg-sand"></div>
-                <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">Próximo Passo</span>
+                <span class="text-sand text-[10px] font-semibold uppercase tracking-[0.25em]">Agende a Sua Visita Privada</span>
                 <div class="w-8 h-[1px] bg-sand"></div>
             </div>
-            <h2 class="text-white text-3xl md:text-5xl font-light tracking-tight mb-6">
-                Descubra o seu<br><span class="font-normal">equilíbrio perfeito</span>
+            <h2 class="text-white text-3xl md:text-5xl font-light tracking-tight mb-5">
+                O lar que a sua família<br><span class="font-normal">sempre imaginou</span>
             </h2>
-            <p class="text-white/50 text-base font-light max-w-lg mx-auto mb-12 leading-relaxed">
-                Entre em contacto connosco para agendar uma visita ou descarregar o brochure completo com todos os detalhes desta moradia exclusiva.
+            <p class="text-white/50 text-base font-light leading-relaxed max-w-xl mx-auto">
+                4 quartos, espaços generosos, piscina e natureza a poucos minutos do mar. Venha sentir o que as fotografias não conseguem transmitir.
             </p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 reveal reveal-delay-1">
-            <a href="/LN-Exclusivo_-_Moradia_Luxo_T4.pdf" download class="cta-glow inline-flex items-center justify-center gap-2.5 text-white text-[11px] font-semibold uppercase tracking-[0.15em] px-8 py-4 rounded-sm">
-                <i data-lucide="download" class="w-4 h-4"></i>
-                Download de Brochura
+    </div>
+
+    <!-- Phone highlight card -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 md:px-12 reveal reveal-delay-1">
+        <a id="cta-phone" href="" class="group block rounded-sm border border-white/10 bg-white/[0.04] hover:bg-white/[0.07] transition-all duration-300 px-8 py-8 md:py-10 text-center" style="box-shadow: 0 0 60px rgba(45,122,79,0.12), inset 0 1px 0 rgba(255,255,255,0.06);">
+            <p class="text-white/40 text-[10px] font-semibold uppercase tracking-[0.3em] mb-3">Chamada gratuita — seg a sáb, 9h–19h</p>
+            <div class="flex items-center justify-center gap-4 mb-3">
+                <div class="w-10 h-10 rounded-full bg-brand/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand/30 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-light"></i>
+                </div>
+                <span id="cta-phone-number" class="text-white text-3xl md:text-4xl font-light tracking-wide"></span>
+            </div>
+            <p class="text-white/30 text-xs font-light">Toque para ligar</p>
+        </a>
+    </div>
+
+    <!-- Secondary actions -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 md:px-12 mt-4 reveal reveal-delay-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- WhatsApp -->
+            <a id="cta-whatsapp" href="" target="_blank" class="flex items-center justify-center gap-2.5 rounded-sm border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-300 px-6 py-4 text-white/60 hover:text-white/90">
+                <i data-lucide="message-circle" class="w-4 h-4 flex-shrink-0"></i>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.15em]">Enviar Mensagem</span>
             </a>
-            <a id="cta-phone" href="" class="cta-sand inline-flex items-center justify-center gap-2.5 bg-sand text-ink text-[11px] font-semibold uppercase tracking-[0.15em] px-8 py-4 rounded-sm hover:bg-sand-light transition-colors">
-                <i data-lucide="phone" class="w-4 h-4"></i>
+            <!-- Brochure -->
+            <a href="/LN-Exclusivo_-_Moradia_Luxo_T4.pdf" download class="flex items-center justify-center gap-2.5 rounded-sm border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-all duration-300 px-6 py-4 text-white/60 hover:text-white/90">
+                <i data-lucide="download" class="w-4 h-4 flex-shrink-0"></i>
+                <span class="text-[11px] font-semibold uppercase tracking-[0.15em]">Download de Brochura</span>
             </a>
         </div>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/30 text-xs font-light reveal reveal-delay-2">
+    </div>
+
+    <!-- Trust bar -->
+    <div class="relative z-10 max-w-2xl mx-auto px-6 md:px-12 mt-10 mb-20 md:mb-28 reveal reveal-delay-2">
+        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-white/25 text-[11px] font-light">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-brand/60"></i>
+                <span>Visita sem compromisso</span>
+            </div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-brand/60"></i>
+                <span>Resposta em menos de 2h</span>
+            </div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-brand/60"></i>
+                <span>Total confidencialidade</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact strip -->
+    <div class="relative z-10 border-t border-white/[0.06] py-8 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 text-white/25 text-xs font-light">
             <div class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i><span id="cta-address"></span></div>
-            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/20"></div>
-            <div class="flex items-center gap-2"><i data-lucide="globe" class="w-3.5 h-3.5"></i><a id="cta-website" href="" target="_blank" class="hover:text-white/60 transition-colors"></a></div>
-            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/20"></div>
-            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5"></i><a id="cta-email" href="" class="hover:text-white/60 transition-colors"></a></div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2"><i data-lucide="globe" class="w-3.5 h-3.5"></i><a id="cta-website" href="" target="_blank" class="hover:text-white/50 transition-colors"></a></div>
+            <div class="hidden sm:block w-1 h-1 rounded-full bg-white/15"></div>
+            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5"></i><a id="cta-email" href="" class="hover:text-white/50 transition-colors"></a></div>
         </div>
     </div>
 </section>
@@ -505,7 +552,8 @@ lucide.createIcons();
 
 // Populate dynamic elements
 document.getElementById('cta-phone').href = 'tel:' + CFG.phone;
-document.getElementById('cta-phone').innerHTML = '<i data-lucide="phone" class="w-4 h-4"></i> Ligar: ' + CFG.phoneDisplay;
+document.getElementById('cta-phone-number').textContent = CFG.phoneDisplay;
+document.getElementById('cta-whatsapp').href = 'https://wa.me/' + CFG.phone.replace('+', '');
 document.getElementById('cta-address').textContent = CFG.address;
 document.getElementById('cta-website').href = CFG.websiteUrl;
 document.getElementById('cta-website').textContent = CFG.website;
