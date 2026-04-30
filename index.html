@@ -111,6 +111,16 @@
         .activity-card img { transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); width: 100%; height: 100%; object-fit: cover; }
         .activity-card:hover img { transform: scale(1.08); }
 
+        /* ── Location section unified tone ── */
+        .loc-img {
+            filter: brightness(1.05) contrast(1.06) saturate(0.88) sepia(0.10) hue-rotate(-5deg);
+            transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.35s ease;
+        }
+        .activity-card:hover .loc-img {
+            transform: scale(1.08);
+            filter: brightness(1.08) contrast(1.10) saturate(0.95) sepia(0.07) hue-rotate(-4deg);
+        }
+
         /* ── CTA Buttons ─────────────────── */
         .cta-glow { background: linear-gradient(135deg, #2D7A4F, #3A9B64); box-shadow: 0 8px 40px rgba(45,122,79,0.3); transition: box-shadow 0.4s, transform 0.4s; }
         .cta-glow:hover { box-shadow: 0 12px 50px rgba(45,122,79,0.45); transform: translateY(-2px); }
@@ -332,11 +342,11 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img src="/RioCavado.jpg" alt="Rio Cávado ao pôr do sol" style="object-position: center 60%"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img src="/esposende-portugal.jpg" alt="Vista panorâmica de Esposende" style="object-position: center 30%"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img src="/A28.jpg" alt="Acesso pela A28" style="object-position: center center"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img src="/airport.jpeg" alt="Aeroporto Francisco Sá Carneiro" style="object-position: center center"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40 col-span-2"><img src="/Promo.jpeg" alt="Esposende" style="object-position: center 40%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/RioCavado.jpg" alt="Rio Cávado ao pôr do sol" style="object-position: center 60%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/esposende-portugal.jpg" alt="Vista panorâmica de Esposende" style="object-position: center 30%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/A28.jpg" alt="Acesso pela A28" style="object-position: center center"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="/airport.jpeg" alt="Aeroporto Francisco Sá Carneiro" style="object-position: center center"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40 col-span-2"><img class="loc-img" src="/Promo.jpeg" alt="Esposende" style="object-position: center 40%"></div>
                 </div>
             </div>
         </div>
