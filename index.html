@@ -768,7 +768,7 @@ function showToast(message) {
 }
 
 // Background audio
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
     const audio = document.createElement('audio');
     audio.src = '/background.mp3';
     audio.loop = true;
@@ -786,9 +786,9 @@ function showToast(message) {
         btn.setAttribute('aria-label', playing ? 'Silenciar música' : 'Reproduzir música');
     }
 
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', function() {
         if (!playing) {
-            audio.play().then(() => setPlaying(true)).catch(() => {});
+            audio.play().then(function() { setPlaying(true); }).catch(function() {});
         } else {
             audio.pause();
             setPlaying(false);
@@ -796,7 +796,7 @@ function showToast(message) {
     });
 
     setPlaying(false);
-})();
+});
 </script>
 
 <!-- Audio toggle button -->
