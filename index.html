@@ -8,12 +8,19 @@
     <meta name="keywords" content="moradia esposende, casa mar esposende, t4 piscina vista mar, imóvel luxo norte portugal, ln local natural">
     <meta name="author" content="LN — Local Natural, Lda.">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1A1A18">
+    <meta property="og:locale" content="pt_PT">
+    <link rel="alternate" hreflang="pt" href="https://www.ln-localnatural.pt">
+    <link rel="alternate" hreflang="x-default" href="https://www.ln-localnatural.pt">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Moradia T4 com Piscina e Vista Mar | Esposende">
     <meta property="og:description" content="Arquitetura de luxo entre a natureza e o mar. 1000m², 297m², 4 quartos, piscina. Rua da Estrada Real, Esposende.">
-    <meta property="og:image" content="https://z-cdn-media.chatglm.cn/files/dca8eab2-1b86-4b55-87d3-aaa8fea30eb3.jpeg?auth_key=1877478027-4dd1304dc3ab4b1d9dcf3e6c116164d6-0-ee3f554726e72cfa67f870fced3a6719">
+    <meta property="og:image" content="https://www.ln-localnatural.pt/public/Galeria_Photo_1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Moradia T4 com piscina e vista mar em Esposende">
     <meta property="og:url" content="https://www.ln-localnatural.pt">
     <meta property="og:site_name" content="LN Local Natural">
 
@@ -21,13 +28,72 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Moradia T4 com Piscina e Vista Mar | Esposende">
     <meta name="twitter:description" content="Arquitetura de luxo entre a natureza e o mar. 1000m², 297m², 4 quartos, piscina.">
-    <meta name="twitter:image" content="https://z-cdn-media.chatglm.cn/files/dca8eab2-1b86-4b55-87d3-aaa8fea30eb3.jpeg?auth_key=1877478027-4dd1304dc3ab4b1d9dcf3e6c116164d6-0-ee3f554726e72cfa67f870fced3a6719">
+    <meta name="twitter:image" content="https://www.ln-localnatural.pt/public/Galeria_Photo_1.jpg">
+    <meta name="twitter:image:alt" content="Moradia T4 com piscina e vista mar em Esposende">
 
     <link rel="canonical" href="https://www.ln-localnatural.pt">
 
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateListing",
+      "name": "Moradia T4 com Piscina e Vista Mar — Esposende",
+      "description": "Moradia T4 de arquitetura contemporânea em Esposende, 1000m² de terreno, piscina com eletrolise de sal, vista sobre o mar. A 5 minutos do mar e do Rio Cávado.",
+      "url": "https://www.ln-localnatural.pt",
+      "image": [
+        "https://www.ln-localnatural.pt/public/Galeria_Photo_1.jpg",
+        "https://www.ln-localnatural.pt/public/Galeria_Photo_2.jpg",
+        "https://www.ln-localnatural.pt/public/Galeria_Photo_3.jpg"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua da Estrada Real",
+        "addressLocality": "Esposende",
+        "addressRegion": "Braga",
+        "addressCountry": "PT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.5344,
+        "longitude": -8.7797
+      },
+      "numberOfRooms": 4,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 297,
+        "unitCode": "MTK"
+      },
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Piscina", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Garagem", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Jardim", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Piso Radiante", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Vista Mar", "value": true}
+      ],
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "LN — Local Natural, Lda.",
+          "url": "https://www.ln-localnatural.pt",
+          "telephone": "+351929052301",
+          "email": "info@ln-localnatural.pt"
+        }
+      }
+    }
+    </script>
 
     <script>
         tailwind.config = {
@@ -246,7 +312,7 @@
      ═══════════════════════════════════════════════════════════════ -->
 <section id="hero-section" class="relative h-screen min-h-[700px] flex items-end overflow-hidden">
     <div class="hero-img-wrap" id="hero-parallax">
-        <img id="hero-bg-img" data-hero src="" alt="Moradia moderna T4 com piscina e vista mar, Esposende">
+        <img id="hero-bg-img" data-hero src="public/Galeria_Photo_1.jpg" alt="Moradia moderna T4 com piscina e vista mar, Esposende" fetchpriority="high">
     </div>
     <!-- static atmospheric tint layers (z-index 2, animations applied via JS) -->
     <div id="hero-foliage" style="position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 45% 90% at 90% 55%,rgba(20,45,15,0.15) 0%,transparent 60%);"></div>
@@ -315,11 +381,11 @@
             <p class="text-ink-muted text-sm font-light max-w-sm">Da arquitetura moderna aos detalhes interiores, cada espaço foi pensado para harmonizar com a paisagem envolvente.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-3 md:h-[600px] reveal reveal-delay-1">
-            <div class="gallery-item md:col-span-2 md:row-span-2 rounded-sm h-[300px] md:h-auto" onclick="openLightbox(0)"><img src="public/Galeria_Photo_1.jpg" alt="Vista exterior com piscina"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(1)"><img src="public/Galeria_Photo_2.jpg" alt="Vista lateral exterior"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(2)"><img src="public/Galeria_Photo_3.jpg" alt="Jardim com piscina"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(3)"><img src="public/Galeria_Photo_4.jpg" alt="Entrada e garagem"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(4)"><img src="public/Galeria_Photo_5.jpg" alt="Vista traseira com piscina"></div>
+            <div class="gallery-item md:col-span-2 md:row-span-2 rounded-sm h-[300px] md:h-auto" onclick="openLightbox(0)"><img src="public/Galeria_Photo_1.jpg" alt="Vista exterior da moradia T4 com piscina em Esposende" loading="eager" fetchpriority="high" width="800" height="600"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(1)"><img src="public/Galeria_Photo_2.jpg" alt="Vista lateral exterior da moradia" loading="lazy" width="400" height="300"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(2)"><img src="public/Galeria_Photo_3.jpg" alt="Jardim com piscina de eletrolise de sal" loading="lazy" width="400" height="300"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(3)"><img src="public/Galeria_Photo_4.jpg" alt="Entrada e garagem fechada para duas viaturas" loading="lazy" width="400" height="300"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(4)"><img src="public/Galeria_Photo_5.jpg" alt="Vista traseira com piscina e jardim" loading="lazy" width="400" height="300"></div>
         </div>
         <div class="mt-6 flex items-center justify-between reveal reveal-delay-2">
             <p class="text-ink-muted text-xs font-light">Clique nas imagens para ampliar</p>
@@ -402,10 +468,10 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/RioCavado.jpg" alt="Rio Cávado ao pôr do sol" style="object-position: center 60%"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/esposende-portugal.jpg" alt="Vista panorâmica de Esposende" style="object-position: center 30%"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/A28.jpg" alt="Acesso pela A28" style="object-position: center center"></div>
-                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/airport.jpeg" alt="Aeroporto Francisco Sá Carneiro" style="object-position: center center"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/RioCavado.jpg" alt="Rio Cávado ao pôr do sol perto de Esposende" loading="lazy" style="object-position: center 60%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/esposende-portugal.jpg" alt="Vista panorâmica de Esposende, norte de Portugal" loading="lazy" style="object-position: center 30%"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/A28.jpg" alt="Autoestrada A28 — acesso rápido a partir de Esposende" loading="lazy" style="object-position: center center"></div>
+                    <div class="activity-card rounded-sm h-32 md:h-40"><img class="loc-img" src="public/airport.jpeg" alt="Aeroporto Francisco Sá Carneiro, Porto — 40km de Esposende" loading="lazy" style="object-position: center center"></div>
                 </div>
             </div>
         </div>
@@ -428,7 +494,7 @@
                 <h2 class="text-ink text-3xl md:text-4xl font-light tracking-tight mt-2 mb-6">Decisões de acabamento<br>e materiais de qualidade</h2>
                 <p class="text-ink-muted text-sm font-light leading-relaxed mb-8">Cada material foi selecionado não apenas pela estética, mas pela durabilidade, sustentabilidade e conforto que proporciona. A moradia reflete um compromisso com a excelência construtiva, onde cada detalhe contribui para uma experiência de vida superior.</p>
                 <div class="activity-card rounded-sm h-[300px] md:h-[380px]">
-                    <img src="public/Image_30-04-2026_at_13.49.png" alt="Acabamentos de qualidade" style="object-position: center center">
+                    <img src="public/Image_30-04-2026_at_13.49.png" alt="Acabamentos e materiais de qualidade premium na moradia T4" loading="lazy" style="object-position: center center">
                 </div>
             </div>
             <div class="flex flex-col justify-center reveal reveal-delay-2">
