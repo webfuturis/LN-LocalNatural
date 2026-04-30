@@ -142,6 +142,7 @@
     <button onclick="event.stopPropagation(); navigateLightbox(-1)" class="absolute left-4 md:left-8 text-white/50 hover:text-white transition-colors z-10" aria-label="Anterior"><i data-lucide="chevron-left" class="w-10 h-10"></i></button>
     <button onclick="event.stopPropagation(); navigateLightbox(1)" class="absolute right-4 md:right-8 text-white/50 hover:text-white transition-colors z-10" aria-label="Seguinte"><i data-lucide="chevron-right" class="w-10 h-10"></i></button>
     <img id="lightbox-img" src="" alt="Property photo" onclick="event.stopPropagation()">
+    <div id="lightbox-counter" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-xs font-light tracking-[0.15em] select-none"></div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
@@ -244,11 +245,11 @@
             <p class="text-ink-muted text-sm font-light max-w-sm">Da arquitetura moderna aos detalhes interiores, cada espaço foi pensado para harmonizar com a paisagem envolvente.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-3 md:h-[600px] reveal reveal-delay-1">
-            <div class="gallery-item md:col-span-2 md:row-span-2 rounded-sm h-[300px] md:h-auto" onclick="openLightbox(0)"><img data-gallery="0" src="" alt="Vista exterior com piscina"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(1)"><img data-gallery="1" src="" alt="Interior open space"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(2)"><img data-gallery="2" src="" alt="Exterior com garagem"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(3)"><img data-gallery="3" src="" alt="Dunas marítimas"></div>
-            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(4)"><img data-gallery="4" src="" alt="Kitesurf e atividades"></div>
+            <div class="gallery-item md:col-span-2 md:row-span-2 rounded-sm h-[300px] md:h-auto" onclick="openLightbox(0)"><img src="/Galeria_Photo_1.jpg" alt="Vista exterior com piscina"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(1)"><img src="/Galeria_Photo_2.jpg" alt="Vista lateral exterior"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(2)"><img src="/Galeria_Photo_3.jpg" alt="Jardim com piscina"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(3)"><img src="/Galeria_Photo_4.jpg" alt="Entrada e garagem"></div>
+            <div class="gallery-item rounded-sm h-[200px] md:h-auto" onclick="openLightbox(4)"><img src="/Galeria_Photo_5.jpg" alt="Vista traseira com piscina"></div>
         </div>
         <div class="mt-6 flex items-center justify-between reveal reveal-delay-2">
             <p class="text-ink-muted text-xs font-light">Clique nas imagens para ampliar</p>
@@ -508,38 +509,31 @@ if (CFG.brochureUrl) {
     };
 }
 
-// Pre-test images and build resolved arrays
-const resolved = { ...CFG.images };
-['interior', 'exterior'].forEach(key => {
-    const img = new Image();
-    img.onload = () => {};
-    img.onerror = () => {
-        const alts = CFG.altPaths[key] || [];
-        let tried = false;
-        const tryNext = (i) => {
-            if (i >= alts.length) { resolved[key] = CFG.fallbacks[key]; return; }
-            const test = new Image();
-            test.onload = () => { resolved[key] = alts[i]; };
-            test.onerror = () => tryNext(i + 1);
-            test.src = alts[i];
-        };
-        tryNext(0);
-    };
-    img.src = CFG.images[key];
-});
+// ── Gallery images ────────────────────────────────────────────
+// First 5 entries match the 5 visible preview tiles (index 0–4).
+// Append future batches here — lightbox navigation updates automatically.
+const galleryImages = [
+    '/Galeria_Photo_1.jpg',
+    '/Galeria_Photo_2.jpg',
+    '/Galeria_Photo_3.jpg',
+    '/Galeria_Photo_4.jpg',
+    '/Galeria_Photo_5.jpg',
+    // Batch 2 — add images here (e.g. '/Galeria_Photo_6.jpg')
+    // Batch 3 — continue appending
+];
 
-// Gallery order: hero, interior, exterior, dunas, kite, castro
-const galleryImages = [CFG.images.hero, resolved.interior, resolved.exterior, CFG.images.dunas, CFG.images.kite, CFG.images.castro];
-
-// Set image sources via data attributes
+// Hero still uses the remote image from CFG
 document.querySelector('[data-hero]').src = CFG.images.hero;
-document.querySelectorAll('[data-gallery]').forEach(el => {
-    const idx = parseInt(el.dataset.gallery);
-    if (galleryImages[idx]) el.src = galleryImages[idx];
-});
+
+// Location section images
 document.querySelector('[data-loc="dunas"]').src = CFG.images.dunas;
 document.querySelector('[data-loc="kite"]').src = CFG.images.kite;
 document.querySelector('[data-loc="castro"]').src = CFG.images.castro;
+
+// Finishings section interior image
+document.querySelectorAll('[data-gallery="1"]').forEach(el => {
+    el.src = galleryImages[1];
+});
 
 // Navigation scroll effect
 const navbar = document.getElementById('navbar');
@@ -569,28 +563,50 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Lightbox
+// ── Lightbox ──────────────────────────────────────────────────
 let currentLightbox = 0;
+
+function updateLightboxUI() {
+    document.getElementById('lightbox-img').src = galleryImages[currentLightbox];
+    document.getElementById('lightbox-counter').textContent =
+        (currentLightbox + 1) + ' / ' + galleryImages.length;
+}
+
 function openLightbox(index) {
     currentLightbox = index;
-    document.getElementById('lightbox-img').src = galleryImages[index];
+    updateLightboxUI();
     document.getElementById('lightbox').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
 function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
     document.body.style.overflow = '';
 }
+
 function navigateLightbox(dir) {
     currentLightbox = (currentLightbox + dir + galleryImages.length) % galleryImages.length;
-    document.getElementById('lightbox-img').src = galleryImages[currentLightbox];
+    updateLightboxUI();
 }
+
+// Keyboard navigation
 document.addEventListener('keydown', (e) => {
     if (!document.getElementById('lightbox').classList.contains('active')) return;
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') navigateLightbox(-1);
     if (e.key === 'ArrowRight') navigateLightbox(1);
 });
+
+// Touch / swipe support
+(function() {
+    let startX = 0;
+    const lb = document.getElementById('lightbox');
+    lb.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) navigateLightbox(dx < 0 ? 1 : -1);
+    }, { passive: true });
+})();
 
 // Toast
 function showToast(message) {
