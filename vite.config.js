@@ -30,6 +30,12 @@ function safePublicCopy() {
 }
 
 export default defineConfig(({ command }) => ({
+  base: '/',
   publicDir: command === 'serve' ? 'public' : false,
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+  },
   plugins: [safePublicCopy()]
 }))
