@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
-// Custom plugin to copy public dir while skipping locked/space-named files
 function safePublicCopy() {
   return {
     name: 'safe-public-copy',
@@ -30,7 +29,7 @@ function safePublicCopy() {
   }
 }
 
-export default defineConfig({
-  publicDir: false,
+export default defineConfig(({ command }) => ({
+  publicDir: command === 'serve' ? 'public' : false,
   plugins: [safePublicCopy()]
-})
+}))
