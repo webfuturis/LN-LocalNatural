@@ -37,5 +37,13 @@ export default defineConfig(({ command }) => ({
     assetsDir: 'assets',
     emptyOutDir: true,
   },
+  server: {
+    fs: {
+      allow: ['..', 'public']
+    }
+  },
+  preview: {
+    middlewareMode: false
+  },
   plugins: [safePublicCopy()]
 }))
