@@ -170,13 +170,15 @@
         .lightbox.active { visibility: visible; }
         .video-modal-inner { position: relative; width: min(92vw, 1200px); transform: scale(0.96) translateY(12px); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1); }
         .video-modal.active .video-modal-inner { transform: scale(1) translateY(0); }
-        .video-modal-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; opacity: 0; transform: translateY(10px); transition: opacity 0.8s 0.2s, transform 0.8s 0.2s cubic-bezier(0.16,1,0.3,1); }
+        .video-modal-header { position: relative; display: flex; justify-content: center; padding: 0 104px; text-align: center; margin-bottom: 24px; min-height: 48px; opacity: 0; transform: translateY(10px); transition: opacity 0.8s 0.2s, transform 0.8s 0.2s cubic-bezier(0.16,1,0.3,1); }
         .video-modal.active .video-modal-header { opacity: 1; transform: translateY(0); }
         .video-modal-title { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; color: #FAFAF7; font-size: clamp(1.75rem, 3.6vw, 3rem); line-height: 1.15; letter-spacing: -0.005em; }
         .video-modal-title em { font-style: italic; color: #D4BC8A; }
-        .video-modal-sub { color: rgba(250,250,247,0.6); font-size: 14px; font-weight: 300; line-height: 1.5; margin-top: 8px; max-width: 560px; }
+        .video-modal-header > div { width: 100%; max-width: 800px; }
+        .video-modal-header .mb-3 { justify-content: center; }
+        .video-modal-sub { margin-left: auto; margin-right: auto; color: rgba(250,250,247,0.78); font-size: 14px; font-weight: 300; line-height: 1.5; margin-top: 8px; max-width: 560px; }
         .video-modal-inner video { width: 100%; max-height: 68vh; max-height: 60dvh; display: block; border-radius: 4px; box-shadow: 0 30px 90px rgba(0,0,0,0.6); background: #000; }
-        .video-modal-close { flex-shrink: 0; background: none; border: none; color: rgba(250,250,247,0.7); cursor: pointer; padding: 8px; transition: color 0.3s, transform 0.3s; display: flex; align-items: center; gap: 8px; }
+        .video-modal-close { position: absolute; top: 0; right: 0; flex-shrink: 0; background: none; border: none; color: rgba(250,250,247,0.7); cursor: pointer; padding: 8px; transition: color 0.3s, transform 0.3s; display: flex; align-items: center; gap: 8px; }
         .video-modal-close:hover { color: #FAFAF7; transform: scale(1.08); }
         .video-unmute { position: absolute; left: 16px; bottom: 56px; display: none; align-items: center; gap: 8px; background: rgba(26,26,24,0.75); color: #FAFAF7; border: 1px solid rgba(196,167,108,0.6); border-radius: 2px; padding: 10px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; backdrop-filter: blur(6px); transition: background 0.3s; }
         .video-unmute:hover { background: rgba(45,122,79,0.9); }
@@ -186,7 +188,10 @@
             #navbar { background: rgba(26,26,24,0.88) !important; }
             #navbar.nav-scrolled { background: rgba(250,250,247,0.98) !important; }
             .video-modal-inner { width: 100%; }
-            .video-modal-header { align-items: flex-start; gap: 8px; margin-bottom: 16px; }
+            .video-modal-header { padding: 0 48px; margin-bottom: 16px; }
+            .video-modal-header .mb-3 { gap: 8px; }
+            .video-modal-header .mb-3 > div { display: none; }
+            .video-modal-header .mb-3 > span { font-size: 9px; letter-spacing: 0.12em; }
             .video-modal-title { font-size: clamp(1.4rem, 6vw, 2rem); }
             .video-modal-sub, .video-modal-close span { display: none; }
             .video-modal-inner video { max-height: calc(100dvh - 192px); }
@@ -196,8 +201,8 @@
             .video-modal, .lightbox { backdrop-filter: none; }
         }
         @media (max-height: 500px) and (orientation: landscape) {
-            .video-modal-header { margin-bottom: 8px; align-items: center; }
-            .video-modal-header .mb-3, .video-modal-sub { display: none; }
+            .video-modal-header { margin-bottom: 8px; padding: 0 48px; display: flex; align-items: center; }
+            .video-modal-header .mb-3, .video-modal-sub, .video-modal-close span { display: none; }
             .video-modal-title { font-size: 1.25rem; }
             .video-modal-inner video { max-height: calc(100dvh - 104px); }
         }
