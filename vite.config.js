@@ -9,7 +9,7 @@ function safePublicCopy() {
     closeBundle() {
       const publicDir = path.resolve(__dirname, 'public')
       const outDir = path.resolve(__dirname, 'dist')
-      const skip = ['logo-LN copy.png']
+      const skip = ['logo-LN copy.png', 'image.png']
       function copyDir(src, dest) {
         fs.mkdirSync(dest, { recursive: true })
         for (const entry of fs.readdirSync(src)) {
@@ -20,7 +20,7 @@ function safePublicCopy() {
           if (stat.isDirectory()) {
             copyDir(srcPath, destPath)
           } else {
-            try { fs.copyFileSync(srcPath, destPath) } catch {}
+            fs.copyFileSync(srcPath, destPath)
           }
         }
       }
@@ -30,7 +30,7 @@ function safePublicCopy() {
 }
 
 export default defineConfig(({ command }) => ({
-  base: '/',
+  base: './',
   publicDir: command === 'serve' ? 'public' : false,
   build: {
     outDir: 'dist',
